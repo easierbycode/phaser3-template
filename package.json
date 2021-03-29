@@ -4,7 +4,7 @@
     "phaser": "^3.54.0"
   },
   "scripts": {
-    "build": "rimraf docs && parcel build src/index.html --dist-dir docs --public-url /game-sandbox/",
+    "build": "rimraf docs && parcel build src/index.html --out-dir docs --public-url /phaser3-template/",
     "dev": "rimraf www && parcel src/index.html"
   },
   "devDependencies": {
