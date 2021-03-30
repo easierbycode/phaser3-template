@@ -6,13 +6,16 @@ export default class Scene2 extends Phaser.Scene {
     }
 
     create() {
-        this.scale.lockOrientation('landscape-primary');
-        this.scale.startFullscreen();
-        console.log('!!! SCENE 2 !!!')
+        // this.scale.lockOrientation('landscape-primary');
+        screen.orientation.lock('landscape-primary')
+        .catch((err) => {alert(err)})
+        .then(() => {
+            this.scale.startFullscreen();
 
-        var platforms = this.physics.add.staticGroup();
+            var platforms = this.physics.add.staticGroup();
 
-        platforms.create(this.scale.width / 2, this.scale.height / 2, 'ground').refreshBody();
+            platforms.create(this.scale.width / 2, this.scale.height / 2, 'ground').refreshBody();
+        });
     }
 
 }
