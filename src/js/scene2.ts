@@ -6,7 +6,7 @@ export default class Scene2 extends Phaser.Scene {
     }
 
     create() {
-        this.scale.lockOrientation('landscape');
+        this.scale.lockOrientation('landscape-primary');
         this.scale.startFullscreen();
         console.log('!!! SCENE 2 !!!')
 
