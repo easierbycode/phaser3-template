@@ -7,7 +7,7 @@ export default class Scene2 extends Phaser.Scene {
 
     create() {
         this.events.on('enterfullscreen', () => {
-            screen.orientation.lock('landscape-primary')
+            screen.orientation.lock('landscape')
             .catch((err) => {alert(err)})
             .then(() => {
                 var platforms = this.physics.add.staticGroup();
