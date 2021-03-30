@@ -3,6 +3,4 @@ import Phaser from 'phaser';
 import {config} from './config';
 
 
-new Phaser.Game(config);
-
-
+window.game = new Phaser.Game(config);
