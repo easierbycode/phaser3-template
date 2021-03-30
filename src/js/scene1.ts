@@ -21,7 +21,11 @@ export default class Scene1 extends Phaser.Scene {
  
         // // on click callback function
         this.button.on("click", (e) => {
-            this.scene.launch('Scene2');
+            if (this.scene.isActive('Scene2')) {
+                this.scale.startFullscreen();
+            } else {
+                this.scene.launch('Scene2');
+            }
         });
  
         this.tweens.add({
@@ -50,7 +54,7 @@ export default class Scene1 extends Phaser.Scene {
     {
         if (orientation === Phaser.Scale.PORTRAIT)
         {
-            if (this.scene.isVisible('Scene2')) {
+            if (this.scene.isActive('Scene2') && this.scene.isVisible('Scene2')) {
                 this.scene.setVisible(false, 'Scene2');
             }
 
@@ -59,7 +63,7 @@ export default class Scene1 extends Phaser.Scene {
         }
         else if (orientation === Phaser.Scale.LANDSCAPE)
         {
-            if (!this.scene.isVisible('Scene2')) {
+            if (this.scale.isFullscreen && this.scene.isActive('Scene2') && !this.scene.isVisible('Scene2')) {
                 this.scene.setVisible(true, 'Scene2');
             }
 

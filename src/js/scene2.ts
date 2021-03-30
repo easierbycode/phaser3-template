@@ -1,3 +1,4 @@
+import { AlignGrid } from "./utils/align-grid";
 
 export default class Scene2 extends Phaser.Scene {
 
@@ -8,9 +9,25 @@ export default class Scene2 extends Phaser.Scene {
     create() {
         this.scale.startFullscreen();
 
+        this.aGrid = new AlignGrid({
+            scene: this,
+            cols: 11,
+            rows: 11
+        });
+
         var platforms = this.physics.add.staticGroup();
 
-        platforms.create(this.scale.width / 2, this.scale.height / 2, 'ground').refreshBody();
+        let platform = platforms.create(0, 0, 'ground').refreshBody();
+
+        this.aGrid.placeAtIndex(60, platform);
+
+
+        this.scale.on('leavefullscreen', () => {
+            this.scene.setVisible(false);
+        });
+        this.scale.on('enterfullscreen', () => {
+            this.scene.setVisible(true);
+        });
     }
 
 }
