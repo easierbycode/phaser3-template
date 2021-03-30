@@ -12,7 +12,7 @@ export default class Scene2 extends Phaser.Scene {
 
         var platforms = this.physics.add.staticGroup();
 
-        platforms.create(this.scale.width / 2, this.scale.height / 2, 'ground').setScale(2).refreshBody();
+        platforms.create(this.scale.width / 2, this.scale.height / 2, 'ground').refreshBody();
     }
 
 }

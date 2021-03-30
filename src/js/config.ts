@@ -4,8 +4,8 @@ import Scene2 from './scene2';
 
 
 export var config: Phaser.Types.Core.GameConfig = {
-    width: 1280,
-    height: 768,
+    width: 960,
+    height: 640,
     physics: {
         default: 'arcade',
         arcade: {
