@@ -54,7 +54,9 @@ export default class Scene2 extends Phaser.Scene {
 
         let {x, y} = this.anchor;
 
-        this.rock = this.matter.add.circle(x, y, 16);
+        this.rock = this.matter.add.circle(x, y, 16, {
+            density: 0.004
+        });
 
         this.elastic = this.matter.add.worldConstraint(this.rock, 0, .05, {
             pointA: this.anchor
