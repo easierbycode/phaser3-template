@@ -7,9 +7,9 @@ export var config: Phaser.Types.Core.GameConfig = {
     width: 960,
     height: 640,
     physics: {
-        default: 'arcade',
-        arcade: {
-            debug: false
+        default: 'matter',
+        matter: {
+            debug: true
         }
     },
     input: {
